@@ -12,9 +12,7 @@
  */
  
  package chapter10sorting;
-
-import java.util.Arrays;
-
+ 
 class SortedSquaredArray {
   public int[] sortedSquaredArray(int[] A) {
       int n = A.length;

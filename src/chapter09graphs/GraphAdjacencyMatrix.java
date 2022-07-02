@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.NoSuchElementException;
 
-public class GraphAdjacencyMatrix {
+public class Graph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
     private final int V;
@@ -24,7 +24,7 @@ public class GraphAdjacencyMatrix {
     private boolean[][] adjMatrix;
 
     // empty graph with V vertices
-    public GraphAdjacencyMatrix(int V) {
+    public Graph(int V) {
         if (V < 0) throw new IllegalArgumentException("Too few vertices");
         this.V = V;
         this.E = 0;
@@ -32,7 +32,7 @@ public class GraphAdjacencyMatrix {
     }
 
     // random graph with V vertices and E edges
-    public GraphAdjacencyMatrix(int V, int E) {
+    public Graph(int V, int E) {
         this(V);
         if (E > (long) V*(V-1)/2 + V) throw new IllegalArgumentException("Too many edges");
         if (E < 0)                    throw new IllegalArgumentException("Too few edges");
@@ -100,7 +100,7 @@ public class GraphAdjacencyMatrix {
         }
     }
 
-    // string representation of GraphAdjacencyMatrix - takes quadratic time
+    // string representation of Graph - takes quadratic time
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append("Undirected graph" + NEWLINE);
@@ -119,7 +119,7 @@ public class GraphAdjacencyMatrix {
     public static void main(String[] args) {
         int V = 5;
         int E = 7;
-        GraphAdjacencyMatrix G = new GraphAdjacencyMatrix(V, E);
+        Graph G = new Graph(V, E);
         System.out.println(G.toString());
     }
 
